@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="SMSCB" Class="SMSOutDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=walid\sql2005;Initial Catalog=SMSCB;Persist Security Info=True;User ID=walid" SettingsObjectName="SMSServer.DataMapping.Properties.Settings" SettingsPropertyName="SMSCBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SMSIn" Member="SMSIns">
+    <Type Name="SMSIn">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MsgBody" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="RecTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SmsOutId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMSOut_SMSIn" Member="SMSOut" ThisKey="SmsOutId" OtherKey="Id" Type="SMSOut" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMSOut" Member="SMSOuts">
+    <Type Name="SMSOut">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MsgBody" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TemplateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DestinationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMSOut_SMSIn" Member="SMSIns" ThisKey="Id" OtherKey="SmsOutId" Type="SMSIn" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Destinations" Member="Destinations">
+    <Type Name="Destination">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

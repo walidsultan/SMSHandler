@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SMSOut">
+  <DataContextMoniker Name="/SMSOutDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7fea8dba-b2c1-4264-b9fc-673cc3b4c1a3" absoluteBounds="3.5, 0.875, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/SMSOutDataContext/SMSIn" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8ffcca4-d0e4-47be-ab8a-05183e34e931" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="353311cd-366a-42b5-9344-da3311f0ac90" absoluteBounds="0.875, 0.75, 2, 2.0822371419270831">
+      <DataClassMoniker Name="/SMSOutDataContext/SMSOut" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb1bdda3-3cdb-4a94-90fc-1dbefcd64917" absoluteBounds="0.89000000000000012, 1.21, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 1.83394490559896); (3.5 : 1.83394490559896)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SMSOutDataContext/SMSOut/SMSOut_SMSIn" />
+      <nodes>
+        <classShapeMoniker Id="353311cd-366a-42b5-9344-da3311f0ac90" />
+        <classShapeMoniker Id="7fea8dba-b2c1-4264-b9fc-673cc3b4c1a3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ac042475-bc4c-4a1f-bc52-584512e6648a" absoluteBounds="3.875, 3.625, 2, 1.0961531575520833">
+      <DataClassMoniker Name="/SMSOutDataContext/Destination" />
+      <nestedChildShapes>
+        <elementListCompartment Id="76b4ea49-bdea-44c9-8122-ae74d36524c2" absoluteBounds="3.89, 4.085, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
